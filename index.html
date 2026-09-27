@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Match - Flip Card Game</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-wrapper">
+    <!-- Header / Stats Dashboard -->
+    <header class="stats-board">
+      <div class="stat-card">
+        <span class="stat-label">Moves</span>
+        <span class="stat-value" id="movesCount">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Time</span>
+        <span class="stat-value" id="timerDisplay">00:00</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Hints Left</span>
+        <span class="stat-value" id="hintsCount">3</span>
+      </div>
+      <div class="controls">
+        <button id="hintBtn" class="btn btn-hint" title="Reveal cards briefly">
+          <i class="fa-solid fa-lightbulb"></i> Hint
+        </button>
+        <button id="restartBtn" class="btn btn-restart" title="Restart game">
+          <i class="fa-solid fa-arrow-rotate-right"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- 4x4 Grid Board -->
+    <ul class="game-board" id="gameBoard" role="region" aria-label="Card Grid">
+      <!-- Generated dynamically by app.js -->
+    </ul>
+
+    <!-- Win Modal Dialog -->
+    <div class="modal-overlay" id="winModal" role="dialog" aria-modal="true">
+      <div class="modal-content">
+        <i class="fa-solid fa-trophy trophy-icon"></i>
+        <h2>Congratulations!</h2>
+        <p>You matched all pairs.</p>
+        
+        <div class="modal-stats">
+          <div>
+            <span>Total Time:</span>
+            <strong id="finalTime">00:00</strong>
+          </div>
+          <div>
+            <span>Total Moves:</span>
+            <strong id="finalMoves">0</strong>
+          </div>
+          <div>
+            <span>Mistakes:</span>
+            <strong id="finalMistakes">0</strong>
+          </div>
+        </div>
+
+        <button id="playAgainBtn" class="btn btn-primary">Play Again</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
